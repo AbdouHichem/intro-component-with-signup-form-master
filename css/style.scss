@@ -13,6 +13,10 @@ body {
     color: white;
 }
 
+.hide {
+    display: none;
+}
+
 main {
 
     max-width: 370px;
@@ -34,70 +38,147 @@ main {
     }
 
     .container {
-        .head{
+        .head {
             text-align: center;
-            background-color:$Blue;
+            background-color: $Blue;
             border-radius: 8px;
-            padding:.8em 3em;
-            font-size:1.2em;
+            padding: .8em 3em;
+            font-size: 1.2em;
             margin: 1.5em 0em;
             box-shadow: 0px 10px 6px 0px rgba(47, 46, 46, 0.366);
-           
-            span{
-                font-weight:700;
+
+            span {
+                font-weight: 700;
             }
         }
-        form{
-            background-color:white;
+
+        form {
+            background-color: white;
             box-shadow: 0px 10px 6px 0px rgba(47, 46, 46, 0.366);
             border-radius: 8px;
-            width:100%;
-            text-align:center;
-            padding:1em 2em;
+            width: 100%;
+            text-align: center;
+            padding: 1em 2em;
 
-            input{
-                width:100%;
-                margin: 1em 0em;
-                padding: 1.5em ;
+            .error {
+                border: solid 2px $Red;
+                color: $Red;
+            }
+
+
+            .formControl {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                justify-content: center;
+
+                img {
+                    position: absolute;
+                    top: 28px;
+                    right: 10px;
+                }
+
+                small {
+                    color: $Red;
+
+                }
+
+                .hide {
+                    display: none;
+                }
+
+                .show {
+                    display: block;
+                }
+            }
+
+            input {
+                width: 100%;
+                margin: .5em 0em;
+                padding: 1em 1.5em;
                 border-radius: 8px;
+                font-size: 1.1em;
                 font-weight: 700;
                 border: solid 1px $GrayishBlue;
-                &:focus{
+
+                &:focus {
                     outline: none;
                 }
+
+
             }
-            input[type=button]{
-                background-color:$Green;
+
+            input[type=button] {
+                background-color: $Green;
+                border: none;
                 padding: .8em 1.5em;
                 font-weight: 600;
-                color:$GrayishBlue2;
-                font-size: 1.1em;
+                color: $GrayishBlue2;
+                font-size: 1em;
                 text-transform: uppercase;
                 cursor: pointer;
-                &:active{
-                    background-color:$Green2;
-                    color:white;
+
+                &:active {
+                    background-color: $Green2;
+                    color: white;
                 }
             }
-            .footer{
-                font-size:.8em;
-                font-weight:700;
-                color:$GrayishBlue;
+
+            .footer {
+                font-size: .8em;
+                font-weight: 700;
+                color: $GrayishBlue;
                 padding: 0em 1.5em;
-                span{
-                    color:$Red;
+
+                span {
+                    color: $Red;
                 }
             }
         }
     }
 }
 
+#iconError {
+    background: url(/images/icon-error.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 20px;
+}
+
 .attribution {
     margin: 2em 0em;
-    font-size: 11px;
+    font-size: 1em;
     text-align: center;
 }
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 720px) {
+
+    body {
+        background-image: url(../images/bg-intro-desktop.png);
+        background-position: center center;
+        
+
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        max-width: 900px;
+        width: 85%;
+        header{
+            flex:1;
+            margin-right: 1em;
+            font-size: 1em;
+        }
+        .container{
+            flex:1;
+        }
+    }
 }
